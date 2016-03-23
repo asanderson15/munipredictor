@@ -22,8 +22,11 @@ public class MuniPredictionApplication {
 
         String outputPath;
 
-        if(args[0] != null) {
+        if(args.length > 0) {
             outputPath = args[0];
+            if(!outputPath.substring(outputPath.length()-1).equals("/")) {
+                outputPath += "/";
+            }
         } else {
             System.out.println("usage: munipredictor outputPath");
             System.exit(1);

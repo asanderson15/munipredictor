@@ -12,6 +12,12 @@ repositories {
     mavenCentral()
 }
 
+run {
+    if(project.hasProperty('args')){
+        args project.args.split('\\s+')
+    }
+}
+
 dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.retrofit2:converter-simplexml:2.0.0'
